@@ -66,6 +66,4 @@ The final strategy report is available in the reports/ directory.
 The analysis pinpoints specific geographic regions that show the highest potential for solar installations, based on environmental variables such as solar irradiance, temperature, and atmospheric clarity. These insights help drive sustainable investment strategies for MoonLight Energy Solutions.
 
 ## 📧 Contact
-For questions or collaboration inquiries, feel free to reach out via [your email] or create an issue in this repo.
-
-Let me know if you'd like this customized with actual file names, dependencies, or a sample strategy report summary.  
+For questions or collaboration inquiries, feel free to reach out via samibluth@gmail.com or create an issue in this repo.
