@@ -30,7 +30,7 @@ Clone the Repository
 bash
 Copy
 Edit
-git clone https://github.com/your-username/moonlight-solar-insights.git
+git clone https://github.com/samigits/moonlight-solar-insights.git
 cd moonlight-solar-insights
 Set Up Environment
 (Optional if you're using a notebook environment like Jupyter or Google Colab)
