@@ -23,15 +23,7 @@ Final strategic recommendation report in PDF/Markdown format
 graphql
 Copy
 Edit
-moonlight-solar-insights/
-│
-├── data/                   # Raw or cleaned environmental data
-├── notebooks/              # Jupyter/Colab notebooks for EDA and analysis
-├── reports/                # Final strategy report and presentation
-├── visuals/                # Generated charts and figures
-├── src/                    # Scripts for data processing or utility functions
-├── README.md               # Project overview and instructions
-└── requirements.txt        # Python dependencies (optional)
+<pre> <code> moonlight-solar-insights/ ├── .gitignore ├── requirements.txt ├── .github/ │ └── workflows/ │ └── ci.yml ├── venv/ (should be listed in .gitignore) </code> </pre>
 ## ⚙️ How to Use
 Clone the Repository
 
