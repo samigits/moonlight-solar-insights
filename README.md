@@ -20,20 +20,29 @@ Regional comparison based on solar suitability metrics
 Final strategic recommendation report in PDF/Markdown format
 
 ## 🗂️ Repository Structure
-graphql
-Copy
-Edit
+
 moonlight-solar-insights/ 
+
 ├── .gitignore 
+
 ├── requirements.txt 
+
 ├── .github/ 
+
   ├──  workflows/ 
+  
       ├──  ci.yml 
+
 ├── scr
+  
   ├── notebook
+  
     ├── benin_eda.ipynb
+    
     ├── sierraleone_eda.ipynb
+    
     ├── togo_eda.ipynb
+
 ## ⚙️ How to Use
 Clone the Repository
 
