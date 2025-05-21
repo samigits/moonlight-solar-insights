@@ -14,7 +14,7 @@ if len(selected_countries) < 2 or len(selected_countries) > 3:
 
 df = merge_selected_countries(selected_countries)
 
-# ✅ Date range slider
+# Date range slider
 df['Timestamp'] = pd.to_datetime(df['Timestamp'])  # ensure Timestamp is datetime
 min_date = df['Timestamp'].min().date()
 max_date = df['Timestamp'].max().date()
@@ -39,4 +39,41 @@ fig, ax = plt.subplots(figsize=(10, 4))
 sns.lineplot(data=filtered_df, x="Timestamp", y="GHI", hue="Country", ax=ax)
 st.pyplot(fig)
 
-# You can do the same for DNI, DHI, etc.
+# DNI comparison
+st.subheader("DNI Over Time")
+fig_dni, ax_dni = plt.subplots(figsize=(10, 4))
+sns.lineplot(data=filtered_df, x="Timestamp", y="DNI", hue="Country", ax=ax_dni)
+st.pyplot(fig_dni)
+
+# DHI comparison
+st.subheader("DHI Over Time")
+fig_dhi, ax_dhi = plt.subplots(figsize=(10, 4))
+sns.lineplot(data=filtered_df, x="Timestamp", y="DHI", hue="Country", ax=ax_dhi)
+st.pyplot(fig_dhi)
+
+st.subheader("Bubble Chart: GHI vs DNI (Bubble Size = DHI)")
+
+fig_bubble, ax_bubble = plt.subplots(figsize=(10, 6))
+
+for country in filtered_df['Country'].unique():
+    subset = filtered_df[filtered_df['Country'] == country]
+    ax_bubble.scatter(
+        subset["GHI"], 
+        subset["DNI"], 
+        s=subset["DHI"] / 5,  # scale down bubble size
+        alpha=0.5, 
+        label=country
+    )
+
+ax_bubble.set_xlabel("GHI (W/m²)")
+ax_bubble.set_ylabel("DNI (W/m²)")
+ax_bubble.set_title("GHI vs DNI with DHI as Bubble Size")
+ax_bubble.legend(title="Country")
+st.pyplot(fig_bubble)
+
+
+# Average Metric Bar Chart by Country
+st.subheader("Average GHI, DNI, DHI per Country")
+avg_df = filtered_df.groupby("Country")[["GHI", "DNI", "DHI"]].mean().reset_index()
+avg_chart = avg_df.set_index("Country").plot(kind="bar", figsize=(8, 4))
+st.pyplot(avg_chart.figure)
